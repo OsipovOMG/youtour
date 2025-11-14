@@ -1,0 +1,123 @@
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-beige-100);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 109%;
+
+  @include desktop {
+    @include fluid-text(96,34);
+  }
+
+  @include mobile {
+    font-size: 34px;
+    line-height: 112%;
+  }
+}
+
+h2 {
+  font-size: 59px;
+  line-height: 124%;
+  font-weight: 700;
+
+  @include desktop {
+
+    @include fluid-text(59,34);
+
+  }
+
+  @include mobile {
+    font-size: 34px;
+    line-height: 112%;
+  }
+}
+
+h3 {
+  font-size: 35px;
+  line-height: 122%;
+  font-weight: 500;
+
+  @include desktop {
+    @include fluid-text(35,23);
+  }
+
+  @include mobile {
+    font-size: 23px;
+    line-height: 120%;
+  }
+}
+
+.p-big {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 122%;
+
+  @include desktop {
+    @include fluid-text(23,16);
+  }
+
+  @include mobile {
+    font-size: 16px;
+    line-height: 142%;
+  }
+}
+
+.p-normal {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 142%;
+
+  @include desktop {
+    @include fluid-text(20,16);
+  }
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+.p-small {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 142%;
+
+  @include desktop {
+    @include fluid-text(17,16);
+  }
+
+  @include mobile {
+    font-size: 16px;
+  }
+
+}
+
+.custom-select {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 21px;
+    width: 26px;
+    height: 26px;
+    background: url('/images/ic-dropdown.svg') no-repeat center / contain;
+    pointer-events: none; // чтобы не мешала клику
+  }
+}

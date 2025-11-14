@@ -1,0 +1,142 @@
+.header {
+
+  background:
+          /* Градиент высотой 280px от чёрного к прозрачному */
+          linear-gradient(to bottom,
+                  rgba(0, 0, 0, 0.4) 0%,
+                  rgba(0, 0, 0, 0) 50%        /* Полная прозрачность на 280px */
+          ),
+          linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+            /* Основное затемнение */
+          url("/images/header.png") center/cover;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 830px;
+
+    @include tablet {
+      height: clamp(488px, calc(830 / 767 * 100vw), 830px);
+    }
+  }
+
+  &__top {
+    @include flex-center();
+    justify-content: space-between;
+    height: 88px;
+  }
+
+  &__logo {
+
+    &-image {
+      @include desktop {
+        width: clamp(133px, calc(181 / 1024 * 100vw), 181px);
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+
+    &-list {
+      display: flex;
+      column-gap: 50px;
+
+      @include desktop {
+        column-gap: 30px;
+      }
+    }
+
+    &-link {
+      position: relative;
+      display: inline-flex;
+      height: 38px;
+      align-items: center;
+      color: var(--color-white);
+
+      @include hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50%;
+        width: 0;
+        height: 1px;
+        background-color: currentColor;
+        transition-duration: inherit;
+      }
+    }
+  }
+
+  &__phone {
+    position: relative;
+    display: inline-flex;
+    height: 38px;
+    align-items: center;
+    color: var(--color-white);
+
+    @include hover {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      translate: -50%;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      transition-duration: inherit;
+    }
+  }
+
+  &__hero {
+    @include flex-center();
+    margin-block: auto;
+    flex-direction: column;
+    row-gap: 50px;
+
+    @include tablet {
+      row-gap: 40px;
+    }
+  }
+
+  &__title {
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: var(--color-white);
+    max-width: clamp(310px, calc(562 / 1400 * 100vw), 562px);
+    text-align: center;
+  }
+
+  &__button {
+    @include reset-button;
+    padding-inline: 20px;
+    padding-block: 5px;
+
+    border-radius: var(--border-radius-button);
+
+    @include hover {
+      color: var(--color-white);
+      background-color: var(--color-orange-200);
+    }
+
+    &:active {
+      color: var(--color-dark);
+      background-color: var(--color-orange-100);
+    }
+  }
+}

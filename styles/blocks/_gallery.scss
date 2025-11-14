@@ -1,0 +1,99 @@
+.gallery {
+  @include flex-center();
+  flex-direction: column;
+  margin-top: 135px;
+  padding-inline: 30px;
+
+  @include desktop {
+    padding-inline: 20px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: var(--color-gray-300);
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  &__images {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    width: 100%;
+
+    @include desktop {
+      row-gap: 20px;
+    }
+
+    @include tablet {
+      row-gap: 18px;
+    }
+  }
+
+  &__row-normal {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap; // Запрещаем перенос на новую строку
+    min-height: 300px;
+
+    @include desktop {
+      gap: 20px;
+    }
+
+    @include tablet {
+      min-height: 110px;
+      gap: 18px;
+    }
+
+    // Базовые стили для нормальных изображений
+    .gallery__image-normal {
+      flex: 0 1 auto; // Не растягиваем, только сжимаем
+      max-width: 442px;
+      min-width: 150px; // Минимальная ширина перед скрытием
+      border-radius: var(--border-radius-base);
+      object-fit: cover;
+      transition: width 0.3s ease; // Плавное изменение размера
+
+      @include tablet {
+        border-radius: 20px;
+      }
+    }
+  }
+
+  &__row-small {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap; // Запрещаем перенос
+
+    min-height: 300px;
+
+    @include desktop {
+      gap: 20px;
+    }
+
+    @include tablet {
+      min-height: 110px;
+      gap: 18px;
+    }
+
+    // Базовые стили для маленьких изображений
+    .gallery__image-small {
+      flex: 0 1 auto;
+      max-width: 350px;
+      min-width: 95px;
+      border-radius: var(--border-radius-base);
+      object-fit: cover;
+      transition: width 0.3s ease;
+
+      @include tablet {
+        border-radius: 20px;
+      }
+    }
+  }
+}
