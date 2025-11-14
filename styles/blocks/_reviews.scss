@@ -1,7 +1,6 @@
 .reviews {
   @include flex-center();
   flex-direction: column;
-  margin-top: 135px;
 
   &__subtitle {
     color: var(--color-gray-300);
@@ -9,14 +8,10 @@
     margin-top: 30px;
   }
 
-  &__title {
-    text-align: center;
-  }
 
   &__list {
     display: flex;
     column-gap: 30px;
-    margin-top: 100px;
 
     @include tablet {
       flex-direction: column;

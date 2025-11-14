@@ -1,15 +1,7 @@
 .tour {
-  margin-top: var(--container-margin-y);
   @include flex-center;
   flex-direction: column;
 
-  @include mobile {
-    margin-top: 75px;
-  }
-
-  &__title {
-    text-align: center;
-  }
 
   &__subtitle {
     color: var(--color-gray-300);
@@ -59,7 +51,6 @@
     column-gap: 30px;
     row-gap: 30px;
     justify-content: center;
-    margin-top: 100px;
 
     @include desktop {
       column-gap: 16px;

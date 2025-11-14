@@ -1,15 +1,10 @@
 .gallery {
   @include flex-center();
   flex-direction: column;
-  margin-top: 135px;
   padding-inline: 30px;
 
   @include desktop {
     padding-inline: 20px;
-  }
-
-  &__title {
-    text-align: center;
   }
 
   &__subtitle {
@@ -19,7 +14,6 @@
   }
 
   &__images {
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     row-gap: 30px;

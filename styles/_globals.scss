@@ -107,6 +107,36 @@ h3 {
 
 }
 
+.section {
+  margin-top: 135px;
+
+  @include tablet {
+    margin-top: 75px;
+  }
+}
+
+.content {
+  margin-top: 100px;
+
+  @include tablet {
+    margin-top: 50px;
+  }
+}
+
+.subtitle {
+  margin-top: 30px;
+  color: var(--color-gray-300);
+  text-align: center;
+
+  @include tablet {
+    margin-top: 20px;
+  }
+}
+
+.title-section {
+  text-align: center;
+}
+
 .custom-select {
   position: relative;
 

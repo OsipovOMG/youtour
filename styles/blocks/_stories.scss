@@ -1,11 +1,7 @@
 .stories {
   @include flex-center();
   flex-direction: column;
-  margin-top: 135px;
 
-  &__title {
-    text-align: center;
-  }
 
   &__subtitle {
     color: var(--color-gray-300);
@@ -16,7 +12,6 @@
   &__list {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
     row-gap: 50px;
   }
 
@@ -31,6 +26,11 @@
     max-width: 1170px;
     background-size: cover;
     background-position: center;
+
+    @include tablet {
+      max-height: 455px;
+      min-height: 455px;
+    }
 
     @include hover {
       .stories__image {
@@ -50,7 +50,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    padding: 60px 60px;
+    padding: 60px;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -58,6 +58,10 @@
             rgba(0, 0, 0, 0.4) 0%,
             rgba(0, 0, 0, 0.06) 48%,
             rgba(0, 0, 0, 0.5) 100%);
+
+    @include tablet {
+      padding: 30px;
+    }
   }
 
   &__image {
@@ -69,10 +73,31 @@
     color: var(--color-white);
   }
 
-  &__card-subtitle {
+  &__description {
     color: var(--color-white);
-    width: 554px;
+    max-width: 554px;
+    width: 100%;
     margin-top: 37px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+  }
+
+  &__details {
+    margin-top: 20px;
+    list-style: disc;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--color-white);
+  }
+
+  &__details-item {
+    color: inherit;
   }
 
   &__link {

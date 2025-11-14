@@ -70,6 +70,9 @@
         Идеальные<br>
         путешествия<br>
         существуют</h1>
+      <p class="header__subtitle p-normal">
+        Идейные соображения высшего порядка, а также рамки и место обучения кадров
+      </p>
       <button
         class="header__button p-small"
         type="button">Найти тур</button>
@@ -77,8 +80,8 @@
   </div>
 </header>
 <main>
-  <section id="tour" class="tour container">
-    <h2 class="tour__title">Выбери свой тур</h2>
+  <section id="tour" class="tour section container">
+    <h2 class="tour__title title-section">Выбери свой тур</h2>
     <nav class="tour__menu">
       <ul class="tour__menu-list">
         <li class="tour__menu-item">
@@ -114,7 +117,7 @@
       </ul>
     </nav>
 
-    <div class="tour__card">
+    <div class="tour__card content">
       <a href="#" class="tour__card-item">
         <div class="tour__card-inner">
           <h3 class="tour__card-title">Путешествие в горы</h3>
@@ -189,15 +192,15 @@
       </a>
     </div>
   </section>
-  <section id="tour-form" class="tour-form container">
-    <h2 class="tour-form__title">Собери свой тур</h2>
-    <p class="tour-form__subtitle p-normal">
+  <section id="tour-form" class="tour-form section container">
+    <h2 class="tour-form__title title-section">Собери свой тур</h2>
+    <p class="subtitle p-normal">
       Идейные соображения высшего порядка,
       а также рамки и место обучения кадров</p>
 
     <form
       action=""
-      class="tour-form__form"
+      class="tour-form__form content"
     >
       <div class="tour-form__list">
         <div class="tour-form__item">
@@ -344,16 +347,16 @@
       </div>
     </form>
   </section>
-  <section id="reviews" class="reviews container">
-    <h2 class="reviews__title section-title">
+  <section id="reviews" class="reviews section container">
+    <h2 class="reviews__title title-section">
       Отзывы наших<br>
       путешественников
     </h2>
-    <p class="reviews__subtitle p-normal">
+    <p class="subtitle p-normal">
       Идейные соображения высшего порядка,<br>
       а также рамки и место обучения кадров
     </p>
-    <div class="reviews__list">
+    <div class="reviews__list content">
       <div class="reviews__item">
         <p class="p-big">Идейные соображения высшего порядка,
           а также рамки и место обучения кадров
@@ -403,12 +406,12 @@
       </div>
     </div>
   </section>
-  <section class="gallery">
-    <h2 class="gallery__title">Фотографии путешествий</h2>
-    <p class="gallery__subtitle">Идейные соображения высшего порядка,<br>
+  <section class="gallery section">
+    <h2 class="gallery__title title-section">Фотографии путешествий</h2>
+    <p class="subtitle">Идейные соображения высшего порядка,<br>
       а также рамки и место обучения кадров
     </p>
-    <div class="gallery__images">
+    <div class="gallery__images content">
       <div class="gallery__row-normal">
         <img src="./images/gallery/travel%20photo-1.jpg" alt="" class="gallery__image-normal">
         <img src="./images/gallery/travel%20photo-2.jpg" alt="" class="gallery__image-normal hidden-desktop">
@@ -431,29 +434,28 @@
 
     </div>
   </section>
-  <section id="stories" class="stories container">
-    <h2 class="stories__title section-title">Истории путешествий</h2>
-    <p class="stories__subtitle p-normal">
+  <section id="stories" class="stories section container">
+    <h2 class="stories__title title-section">Истории путешествий</h2>
+    <p class="subtitle p-normal">
       Идейные соображения высшего порядка,<br>
       а также рамки и место обучения кадров
     </p>
 
-    <div class="stories__list">
+    <div class="stories__list content">
       <article class="stories__item">
         <div class="stories__inner">
           <h3 class="stories__title-card">Автостопом в Стамбул</h3>
-          <p class="stories__card-subtitle p-normal">
+          <p class="stories__description p-normal">
             Идейные соображения высшего порядка,
             а также рамки и место обучения кадров
             обеспечивает широкому кругу (специалистов)
-            участие в формировании новых предложений.
-          <p class="stories__card-subtitle hidden-tablet">
-            <br><br>
-            &nbsp;· вкусная еда <br>
-            &nbsp;· дешевый транспорт <br>
-            &nbsp;· красивый город.
+            участие в формировании новых предложений:
           </p>
-          </p>
+          <ul class="stories__details">
+            <li class="stories__details-item p-normal">вкусная еда</li>
+            <li class="stories__details-item p-normal">дешевый транспорт</li>
+            <li class="stories__details-item p-normal">красивый город</li>
+          </ul>
           <a href="#" class="stories__link p-big">Подробнее</a>
           <nav class="stories__social hidden-tablet">
             <ul class="stories__social-list">
@@ -479,13 +481,9 @@
             а также рамки и место обучения кадров
             обеспечивает широкому кругу (специалистов)
             участие в формировании новых предложений:
-            <br><br>
-            &nbsp;· вкусная еда <br>
-            &nbsp;· дешевый транспорт <br>
-            &nbsp;· красивый город.
           </p>
           <a href="#" class="stories__link p-big">Подробнее</a>
-          <nav class="stories__social">
+          <nav class="stories__social hidden-tablet">
             <ul class="stories__social-list">
               <li class="stories__social-item">
                 <a href="#" class="stories__social-link p-normal">telegram</a>
@@ -509,13 +507,9 @@
             а также рамки и место обучения кадров
             обеспечивает широкому кругу (специалистов)
             участие в формировании новых предложений:
-            <br><br>
-            &nbsp;· вкусная еда <br>
-            &nbsp;· дешевый транспорт <br>
-            &nbsp;· красивый город.
           </p>
           <a href="#" class="stories__link p-big">Подробнее</a>
-          <nav class="stories__social">
+          <nav class="stories__social hidden-tablet">
             <ul class="stories__social-list">
               <li class="stories__social-item">
                 <a href="#" class="stories__social-link p-normal">telegram</a>
