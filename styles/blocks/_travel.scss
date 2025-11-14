@@ -1,0 +1,78 @@
+.travel {
+  @include flex-center();
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    justify-content: center;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+  }
+
+  &__image {
+    width: 370px;
+    height: 370px;
+    border-radius: var(--border-radius-base);
+    object-fit: cover;
+    flex-shrink: 0;
+
+    @include tablet {
+      width: clamp(130px, calc(130px + (370 - 130) * ((100vw - 360px) / (768 - 360))), 370px);
+      height: clamp(130px, calc(130px + (370 - 130) * ((100vw - 360px) / (768 - 360))), 370px);
+      aspect-ratio: 1 / 1;
+      border-radius: 20px;
+    }
+  }
+
+  &__info {
+    max-width: 371px;
+    width: 100%;
+
+    @include tablet {
+      max-width: clamp(293px, calc(291px + (371 - 291) * ((100vw - 360px) / (768 - 360))), 371px);
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__description {
+    color: var(--color-gray-300);
+  }
+
+  &__link {
+    color: var(--color-black);
+    position: relative;
+
+    @include hover {
+      color: var(--color-orange-200);
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      transition: width var(--transition-duration);
+    }
+  }
+}

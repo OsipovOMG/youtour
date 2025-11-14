@@ -1333,4 +1333,130 @@ h3 {
   transition-duration: inherit;
 }
 
+.travel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.travel__content {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  justify-content: center;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .travel__content {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+.travel__image {
+  width: 370px;
+  height: 370px;
+  border-radius: var(--border-radius-base);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .travel__image {
+    width: clamp(130px, 130px + 240 * (100vw - 360px) / 408, 370px);
+    height: clamp(130px, 130px + 240 * (100vw - 360px) / 408, 370px);
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+  }
+}
+.travel__info {
+  max-width: 371px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .travel__info {
+    max-width: clamp(293px, 291px + 80 * (100vw - 360px) / 408, 371px);
+    text-align: center;
+  }
+}
+.travel__title {
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .travel__title {
+    margin-bottom: 15px;
+  }
+}
+.travel__description {
+  color: var(--color-gray-300);
+}
+.travel__link {
+  color: var(--color-black);
+  position: relative;
+}
+@media (hover: hover) {
+  .travel__link:hover {
+    color: var(--color-orange-200);
+  }
+  .travel__link:hover::after {
+    width: 100%;
+  }
+}
+@media (hover: none) {
+  .travel__link:active {
+    color: var(--color-orange-200);
+  }
+  .travel__link:active::after {
+    width: 100%;
+  }
+}
+.travel__link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width var(--transition-duration);
+}
+
+.footer {
+  background-color: var(--color-beige-200);
+  width: 100%;
+}
+.footer__container {
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 30px;
+}
+@media (max-width: 768px) {
+  .footer__container {
+    flex-direction: column;
+    padding-block: 20px;
+    row-gap: 8px;
+  }
+}
+.footer__title {
+  display: inline-flex;
+  color: var(--color-gray-300);
+}
+.footer__list {
+  display: flex;
+  column-gap: 25px;
+}
+.footer__item {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+.footer__social-image {
+  width: 26px;
+  height: 26px;
+}
+.footer__link {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
 /*# sourceMappingURL=styles.css.map */
