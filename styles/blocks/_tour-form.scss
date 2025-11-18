@@ -53,17 +53,54 @@
       flex-direction: row;
     }
 
-    &--button {
-      display: flex;
-      column-gap: 30px;
-      width: 100%;
+  }
 
-      @include tablet {
-        column-gap: 10px;
-        margin-bottom: 20px;
+  &__buttons {
+    display: flex;
+    column-gap: 30px;
+    width: 100%;
+
+    @include tablet {
+      column-gap: 10px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    @include reset-button;
+    padding-inline: 20px;
+    padding-block: 5px;
+    max-width: 235px;
+    min-width: 134px;
+    width: 100%;
+    height: 58px;
+    border-radius: var(--border-radius-button);
+
+    &--search {
+      background-color: var(--color-green-400);
+      color: var(--color-white);
+
+      @include hover {
+        background-color: var(--color-green-300);
+      }
+
+      &:active {
+        background-color: var(--color-green-200);
       }
     }
 
+    &--reset {
+      background-color: var(--color-green-100);
+      color: var(--color-gray-400);
+
+      @include hover {
+        background-color: var(--color-gray-100);
+      }
+
+      &:active {
+        background-color: var(--color-gray-200);
+      }
+    }
   }
 
   &__input {
@@ -200,59 +237,33 @@
   }
 
   &__license-link {
+    position: relative;
     color: var(--color-black);
     text-decoration: none;
-    // Добавь эти свойства:
     display: inline;
 
 
     @include hover {
-      color: var(--color-orange-200);
+      &::after {
+        width: 100%;
+      }
     }
-  }
-
-  &__button--search {
-    @include reset-button;
-    padding-inline: 20px;
-    padding-block: 5px;
-    max-width: 235px;
-    min-width: 134px;
-    width: 100%;
-    height: 58px;
-    background-color: var(--color-green-400);
-    color: var(--color-white);
-    border-radius: var(--border-radius-button);
-
-    @include hover {
-      background-color: var(--color-green-300);
-    }
-    &:active {
-      background-color: var(--color-green-200);
-
-    }
-  }
-
-  &__button--reset {
-    @include reset-button;
-    padding-inline: 20px;
-    padding-block: 5px;
-    max-width: 235px;
-    min-width: 134px;
-    width: 100%;
-    height: 58px;
-    background-color: var(--color-green-100);
-    color: var(--color-gray-400);
-
-    border-radius: var(--border-radius-button);
-
-    @include hover {
-      background-color: var(--color-gray-100);
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      translate: -50%;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      transition-duration: inherit;
     }
 
     &:active {
-      background-color: var(--color-gray-200);
-
+      color: var(--color-green-400);
     }
   }
+
 
 }

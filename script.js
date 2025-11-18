@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Получаем оба поля
   const dateFirst = document.getElementById('date-first');
   const dateSecond = document.getElementById('date-second');
 
-  // Функция для форматирования ввода
   function formatDateInput(e) {
-    let value = e.target.value.replace(/\D/g, ''); // Только цифры
+    let value = e.target.value.replace(/\D/g, '');
 
     if (value.length > 2) {
       value = value.slice(0, 2) + '.' + value.slice(2);
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     e.target.value = value;
   }
 
-  // Функция для проверки формата даты
   function validateDate(input) {
     const regex = /^\d{2}\.\d{2}\.\d{4}$/;
     if (!regex.test(input.value)) {
@@ -29,17 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Привязываем обработчики к обоим полям
   [dateFirst, dateSecond].forEach(input => {
     input.addEventListener('input', formatDateInput);
 
     input.addEventListener('blur', () => validateDate(input));
 
-    // Очищаем ошибку при фокусе
     input.addEventListener('focus', () => input.classList.remove('error'));
   });
 
-  // Дополнительно: проверка логики «дата от ≤ дата до» (опционально)
   function checkDateRange() {
     if (!validateDate(dateFirst) || !validateDate(dateSecond)) return;
 
@@ -55,7 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Проверяем диапазон при изменении любого поля
   dateFirst.addEventListener('change', checkDateRange);
   dateSecond.addEventListener('change', checkDateRange);
+
+  const headerTop = document.querySelector('.header__top');
+  
+  function handleScroll() {
+    if (window.scrollY > 450) {
+      headerTop.classList.add('header__top--fixed');
+    } else {
+      headerTop.classList.remove('header__top--fixed');
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
 });

@@ -1,13 +1,11 @@
 .header {
 
   background:
-          /* Градиент высотой 280px от чёрного к прозрачному */
           linear-gradient(to bottom,
                   rgba(0, 0, 0, 0.4) 0%,
-                  rgba(0, 0, 0, 0) 50%        /* Полная прозрачность на 280px */
+                  rgba(0, 0, 0, 0) 50%
           ),
           linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-            /* Основное затемнение */
           url("../images/header.png") center/cover;
 
   &__inner {
@@ -24,6 +22,48 @@
     @include flex-center();
     justify-content: space-between;
     height: 88px;
+    position: relative;
+    z-index: 100;
+    transition: all var(--transition-duration);
+
+    &--fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-width: calc(var(--container-width) + var(--container-padding-x-desktop) * 2);
+      margin-inline: auto;
+      padding-inline: var(--container-padding-x-desktop);
+      z-index: 1000;
+
+      @include tablet {
+        max-width: calc(var(--container-width) + var(--container-padding-x-mobile) * 2);
+        padding-inline: var(--container-padding-x-mobile);
+      }
+
+      &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 88px;
+        background-color: rgba(243, 239, 232, 0.6);
+        backdrop-filter: blur(54px);
+        -webkit-backdrop-filter: blur(54px);
+        z-index: -1;
+      }
+
+      .header__menu-link,
+      .header__phone {
+        color: var(--color-black);
+      }
+
+      .header__logo-image {
+        filter: brightness(0);
+      }
+    }
   }
 
   &__logo {

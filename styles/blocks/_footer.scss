@@ -37,7 +37,27 @@
     height: 26px;
   }
   &__link {
+    position: relative;
+    display: inline-flex;
     text-decoration: none;
     color: var(--color-black);
+
+    @include hover {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      translate: -50%;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      transition-duration: inherit;
+    }
   }
 }

@@ -3,6 +3,10 @@
   flex-direction: column;
 
 
+  &__title {
+    text-align: center;
+  }
+
   &__subtitle {
     color: var(--color-gray-300);
     text-align: center;
@@ -69,11 +73,11 @@
     object-fit: cover;
   }
 
-  &__title-card {
+  &__card-title {
     color: var(--color-white);
   }
 
-  &__description {
+  &__card-description {
     color: var(--color-white);
     max-width: 554px;
     width: 100%;
@@ -96,7 +100,7 @@
     color: var(--color-white);
   }
 
-  &__details-item {
+  &__detail {
     color: inherit;
   }
 

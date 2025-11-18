@@ -32,7 +32,7 @@
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: nowrap; // Запрещаем перенос на новую строку
+    flex-wrap: nowrap;
     min-height: 300px;
 
     @include desktop {
@@ -44,14 +44,13 @@
       gap: 18px;
     }
 
-    // Базовые стили для нормальных изображений
     .gallery__image-normal {
-      flex: 0 1 auto; // Не растягиваем, только сжимаем
+      flex: 0 1 auto;
       max-width: 442px;
-      min-width: 150px; // Минимальная ширина перед скрытием
+      min-width: 150px;
       border-radius: var(--border-radius-base);
       object-fit: cover;
-      transition: width 0.3s ease; // Плавное изменение размера
+      transition: width 0.3s ease;
 
       @include tablet {
         border-radius: 20px;
@@ -63,7 +62,7 @@
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: nowrap; // Запрещаем перенос
+    flex-wrap: nowrap;
 
     min-height: 300px;
 
@@ -76,7 +75,6 @@
       gap: 18px;
     }
 
-    // Базовые стили для маленьких изображений
     .gallery__image-small {
       flex: 0 1 auto;
       max-width: 350px;
