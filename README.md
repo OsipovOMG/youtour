@@ -1,2 +1,2 @@
 # youtour
-testing pages
+Тестовое задание для SNP
